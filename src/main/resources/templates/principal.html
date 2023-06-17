@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="head">
+	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+	<title>Insert title here</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+</head>
+
+<body>
+	<div id="contenedor">
+		
+		<div class="text-center">
+		<header th:fragment="header">
+		<h1>LIBRERIAS "EL BUEN SABER"</h1>
+			<p>Donde Leer es un placer <strong></strong></p>
+		</header>    
+		
+		</div>
+			
+
+		<main>
+			<nav class="navbar" style="background-color: #e3f2fd;">
+				<ul class="nav nav-pills nav-fill">
+
+					<li class="nav-item"><a class="nav-link active"
+						aria-current="page" href="/logout">Iniciar sesion</a></li>
+
+				</ul>
+			</nav>
+			<section style="width:0%;float:0% right;">
+				<img src="https://media.timeout.com/images/105766643/image.jpg" height="50%" width="150%"/>
+				
+			</section>
+		</main>
+		<footer th:fragment="footer">
+			<!-- jQuery library -->
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+			<!-- Popper JS -->
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+			<!-- Latest compiled JavaScript -->
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+		</footer>
+	</div>
+
+</body>
+
+</html>
