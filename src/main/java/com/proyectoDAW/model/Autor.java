@@ -1,6 +1,6 @@
 package com.proyectoDAW.model;
 
-import java.util.Date;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -14,7 +14,6 @@ public class Autor {
 	@Id
 	private int idautor;
 	private String nom_aut;
-	private String apel_aut;
-	private Date fch_nac;
+	private String fch_nac;
 	private String nacionalidad;
 }

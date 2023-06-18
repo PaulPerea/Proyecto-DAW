@@ -1,6 +1,6 @@
 package com.proyectoDAW.model;
 
-import java.util.Date;
+
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
@@ -21,7 +21,7 @@ public class Libro {
 	private int idcategoria;
 	private double prec_lib;
 	private int stock_lib;
-	private Date fch_public;
+	private String fch_public;
 	
 	@ManyToOne
 	@JoinColumn(name = "idautor", insertable = false, updatable = false)

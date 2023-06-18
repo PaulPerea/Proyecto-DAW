@@ -22,7 +22,7 @@ public class Usuario {
 	@Column(name="cla_usua")
 	private String clave;
 	
-	private Date fna_usua;
+	private String fna_usua;
 	private int idtipo;
 	
 	@Column(name="usr_usua")
