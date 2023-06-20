@@ -15,5 +15,5 @@ public class Autor {
 	private int idautor;
 	private String nom_aut;
 	private String fch_nac;
-	private String nacionalidad;
+	private String pais;
 }

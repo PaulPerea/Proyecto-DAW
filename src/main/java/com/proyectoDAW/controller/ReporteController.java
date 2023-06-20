@@ -66,6 +66,78 @@ public class ReporteController {
 
 		
 	}
+	@GetMapping("/pdf/usuario")
+	public void reporteusua(HttpServletResponse response) {
+		// descargar directamente en un archivo
+		// response.setHeader("Content-Disposition", "attachment; filename=\"reporte.pdf\";");
+		
+		// el pdf se muestre en pantalla
+		response.setHeader("Content-Disposition", "inline;"); 
+		// tipo de contenido
+		response.setContentType("application/pdf");
+		try {
+			// obtener el recurso a utilizar -> jasper
+			String ru = resourceLoader.getResource("classpath:reportes/reporteusuario.jasper").getURI().getPath();
+			// combina el jasper + data / Ojo!!! null -> la conexión no tiene parámetros
+			JasperPrint jasperPrint = JasperFillManager.fillReport(ru, null, dataSource.getConnection());
+			// genera un archivo temporal
+			OutputStream outStream = response.getOutputStream();
+			// muestra el archivo
+			JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+	@GetMapping("/pdf1/libro")
+	public void reportelib(HttpServletResponse response) {
+		// descargar directamente en un archivo
+		// response.setHeader("Content-Disposition", "attachment; filename=\"reporte.pdf\";");
+		
+		// el pdf se muestre en pantalla
+		response.setHeader("Content-Disposition", "inline;"); 
+		// tipo de contenido
+		response.setContentType("application/pdf");
+		try {
+			// obtener el recurso a utilizar -> jasper
+			String ru = resourceLoader.getResource("classpath:reportes/reportelibros.jasper").getURI().getPath();
+			// combina el jasper + data / Ojo!!! null -> la conexión no tiene parámetros
+			JasperPrint jasperPrint = JasperFillManager.fillReport(ru, null, dataSource.getConnection());
+			// genera un archivo temporal
+			OutputStream outStream = response.getOutputStream();
+			// muestra el archivo
+			JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	}
+	@GetMapping("/pdf2/autor")
+	public void reporteautor(HttpServletResponse response) {
+		// descargar directamente en un archivo
+		// response.setHeader("Content-Disposition", "attachment; filename=\"reporte.pdf\";");
+		
+		// el pdf se muestre en pantalla
+		response.setHeader("Content-Disposition", "inline;"); 
+		// tipo de contenido
+		response.setContentType("application/pdf");
+		try {
+			// obtener el recurso a utilizar -> jasper
+			String ru = resourceLoader.getResource("classpath:reportes/reporteautor.jasper").getURI().getPath();
+			// combina el jasper + data / Ojo!!! null -> la conexión no tiene parámetros
+			JasperPrint jasperPrint = JasperFillManager.fillReport(ru, null, dataSource.getConnection());
+			// genera un archivo temporal
+			OutputStream outStream = response.getOutputStream();
+			// muestra el archivo
+			JasperExportManager.exportReportToPdfStream(jasperPrint, outStream);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+	}
 	@PostMapping("/reporte_cate")
 	public void reporteFiltro(@ModelAttribute Libro libro, 
 						HttpServletResponse response) {
